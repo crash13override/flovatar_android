@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#431C8F"
+    tools:context=".mobileapp.activity.LeaderboardActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:srcCompat="@drawable/ic_icon_close" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/leaderbordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_close"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/staatliches_regular"
+        android:text="@string/leaderbord"
+        android:textColor="@android:color/white"
+        android:textSize="40sp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_below="@+id/leaderbordTitle"
+        android:layout_marginTop="20dp"
+        android:minHeight="?actionBarSize"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        app:tabIndicatorHeight="4dp"
+        app:tabIndicatorColor="#FFEE50"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextAppearance="@style/tab_text"
+        app:tabTextColor="#4DFFFFFF" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabLayout" />
+
+</RelativeLayout>

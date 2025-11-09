@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#180E38">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_clouds" />
+
+        <FrameLayout
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ProgressBar
+                android:id="@+id/circularProgressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="160dp"
+                android:layout_height="105dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="-25dp"
+                android:indeterminate="false"
+                android:progress="0"
+                android:progressDrawable="@drawable/circular" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/seconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="-13dp"
+                android:layout_marginBottom="1dp"
+                android:fontFamily="@font/roboto_condensed_bold"
+
+                android:textColor="@android:color/white"
+                android:textSize="28sp" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            app:srcCompat="@drawable/ic_pause" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:text="@string/score_"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="26sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/game_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/score"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:includeFontPadding="false"
+            android:text="0"
+            android:textAllCaps="true"
+            android:textColor="#FFEE50"
+            android:textSize="54sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/game_score"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            tools:listitem="@layout/item_game_flovatar" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutTimesUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#180E38"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_home_end"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_home" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/time_is_up"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="54sp" />
+
+
+            <LinearLayout
+                android:id="@+id/end_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_end"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/end_your_score"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:gravity="center"
+                    android:text="@string/your_score"
+                    android:textColor="@android:color/white"
+                    android:textSize="28sp" />
+
+                <LinearLayout
+                    android:id="@+id/layot_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_end"
+                    android:layout_alignEnd="@+id/end_your_score"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:layout_below="@+id/end_score"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/btn_stroke_yellow"
+                android:fontFamily="@font/staatliches_regular"
+                android:gravity="center"
+                android:hint="@string/enter_your_name"
+                android:textColor="#FFEE50"
+                android:textColorHint="#524676"
+                android:textSize="32dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_save_score"
+                android:layout_width="226dp"
+                android:layout_height="58dp"
+                android:layout_below="@id/et_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_double_yellow_small"
+                android:fontFamily="@font/staatliches_regular"
+                android:gravity="center"
+                android:paddingStart="30dp"
+                android:paddingEnd="15dp"
+                android:text="@string/save_score"
+                android:textAllCaps="true"
+                android:textColor="#431C8F"
+                android:textSize="40sp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_play_again"
+                android:layout_width="226dp"
+                android:layout_height="58dp"
+                android:layout_below="@id/btn_save_score"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_double_yellow_small"
+                android:fontFamily="@font/staatliches_regular"
+                android:gravity="center"
+                android:paddingStart="30dp"
+                android:paddingEnd="15dp"
+                android:text="@string/play_again"
+                android:textAllCaps="true"
+                android:textColor="#431C8F"
+                android:textSize="40sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutPaused"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#180E38"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_paused"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/paused"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="54sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_paused"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/btn_restart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_icon_restart" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_condensed_bold"
+                        android:text="@string/restart"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_resume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_play" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_condensed_bold"
+                        android:text="@string/resume"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_quit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_icon_quit" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_condensed_bold"
+                        android:text="@string/quit"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutWin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#180E38"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_home_win"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_home" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_win"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/you_did_it"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="54sp" />
+
+
+            <LinearLayout
+                android:id="@+id/win_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_win"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/win_your_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:gravity="center"
+                    android:text="@string/your_score"
+                    android:textColor="@android:color/white"
+                    android:textSize="28sp" />
+
+                <LinearLayout
+                    android:id="@+id/layot_score_win"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_end"
+                    android:layout_alignEnd="@+id/end_your_score"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_play_again_win"
+                android:layout_width="226dp"
+                android:layout_height="58dp"
+                android:layout_below="@id/win_score"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_double_yellow_small"
+                android:fontFamily="@font/staatliches_regular"
+                android:gravity="center"
+                android:paddingStart="30dp"
+                android:paddingEnd="15dp"
+                android:text="@string/next_level"
+                android:textAllCaps="true"
+                android:textColor="#180E38"
+                android:textSize="40sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layout_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#180E38">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/ic_home" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/circularProgressbarLoading"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="250dp"
+                    android:layout_height="105dp"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="false"
+                    android:max="3000"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circular"
+                    android:secondaryProgress="3000" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/seconds_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:text="3"
+                    android:textColor="@android:color/white"
+                    android:textSize="54sp" />
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/progress"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto_condensed_bold"
+                android:text="@string/get_ready"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="54sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</FrameLayout>

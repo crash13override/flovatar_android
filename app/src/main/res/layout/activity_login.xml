@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background_gradient"
+    tools:context=".mobileapp.activity.LoginActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:srcCompat="@drawable/ic_icon_logout" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/flovatar_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="50dp"
+        android:src="@drawable/flovatar_logo" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_login_blocto"
+        android:layout_width="320dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/btn_browse"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_double_violet"
+        android:fontFamily="@font/staatliches_regular"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/my_flowatars"
+        android:textAllCaps="true"
+        android:textColor="#180E38"
+        android:textSize="32sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_browse"
+        android:layout_width="320dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/flovatar_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_double_violet"
+        android:fontFamily="@font/staatliches_regular"
+        android:gravity="center"
+        android:paddingStart="25dp"
+        android:paddingEnd="15dp"
+        android:text="@string/public_flowatars"
+        android:textAllCaps="true"
+        android:textColor="#180E38"
+        android:textSize="32sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnPlayGames"
+        android:layout_width="320dp"
+        android:layout_height="58dp"
+        android:layout_below="@+id/btn_login_blocto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_double_yellow"
+        android:fontFamily="@font/staatliches_regular"
+        android:gravity="center"
+        android:text="@string/mini_games"
+        android:textColor="#180E38"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:id="@+id/layout_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="30dp"
+            android:visibility="gone"
+            android:background="@drawable/bg_circle_white">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/avatar"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-5dp"
+                android:scaleType="centerCrop" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end|center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:text="@string/total_score_"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/total_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto_condensed_bold"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    tools:text="2787" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_condensed_regular"
+                    android:text="@string/save_score"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/save_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:thumb="@drawable/switch_selector"
+                    app:track="@drawable/switch_track" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/ic_stars" />
+
+
+</RelativeLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#431C8F"
+    tools:context=".mobileapp.activity.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_home"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_home" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_home"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/staatliches_regular"
+        android:text="@string/chose_your_player"
+        android:textColor="@android:color/white"
+        android:textSize="40sp" />
+
+    <FrameLayout
+        android:id="@+id/bigavatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBigAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            tools:listitem="@layout/item_avatar_chose_player" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:alpha="0.8"
+                android:scaleType="fitXY"
+                android:src="@drawable/beam" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/arrow"
+        android:layout_width="24dp"
+        android:layout_height="12dp"
+        android:layout_below="@+id/bigavatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_active_avatar" />
+
+    <com.jackandphantom.carouselrecyclerview.CarouselRecyclerview
+        android:id="@+id/recyclerCarousel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttons"
+        android:layout_below="@+id/arrow" />
+
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:gravity="center"
+            android:background="@drawable/btn_double_blue"
+            android:fontFamily="@font/staatliches_regular"
+            android:paddingStart="30dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="4dp"
+            android:text="@string/back"
+            android:textColor="@android:color/white"
+            android:textSize="32sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/btn_double_yellow_small"
+            android:fontFamily="@font/staatliches_regular"
+            android:paddingStart="30dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="4dp"
+            android:text="@string/play"
+            android:textColor="#180E38"
+            android:textSize="32sp" />
+    </LinearLayout>
+</RelativeLayout>
